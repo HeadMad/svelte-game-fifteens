@@ -1,6 +1,5 @@
 <script>
 import {createEventDispatcher} from 'svelte';
-import { compute_rest_props } from 'svelte/internal';
 
   export let level = 3;
 
@@ -112,7 +111,7 @@ import { compute_rest_props } from 'svelte/internal';
   }
 </script>
 
-<div class="batlefield {$$props.class}" >
+<div class="batlefield {$$props.class}" style="{$$props.style}">
   {#each cells as cell, index (cell)}
     {#if count !== index + 1}
       <div
@@ -138,7 +137,6 @@ import { compute_rest_props } from 'svelte/internal';
   }
   
   .cell {
-    aspect-ratio: 1 / 1;
     position: absolute;
     transition: 0.2s;
   }
